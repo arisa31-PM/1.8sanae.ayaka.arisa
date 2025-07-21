@@ -7,22 +7,50 @@
     <meta name="description"
         content="メタバースでつながる、新しい学びと仲間との出会い。初心者も安心して参加できるコミュニティ『Meta Leaf』で、セミナーや作業会を通じて目的に合わせた活用を始めよう。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" type="image/png" href="img/favicon.png?v=2">
+    <link rel="icon" type="image/png" href="img/favicon.png?v=2">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
-        <h1><img src="img/logo.png" alt="メタリーフロゴ画像"></h1>
-        <nav>
+        <h1><img class="logo-pc" src="img/logo-pc.png" alt="メタリーフロゴ画像"></h1>
+        <img class="logo-sp" src="img/logo-sp.png" alt="ロゴ画像（スマホ）" >
+
+        <nav class="header-nav">
             <ul class="navi">
                 <li><a href="#mainvisual">TOP</a></li>
                 <li><a href="#experience">EXPERIENCE</a></li>
                 <li><a href="#voice">VOICE</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li class="contact-link">
+                    <a href="#contact">
+                        CONTACT
+                        <span><img class="fly-icon" src="img/plane.png" alt="紙飛行機"></span>
+                    </a>
+                </li>
             </ul>
         </nav>
+
+        <!-- ハンバーガーボタン -->
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+
+        <!-- 全画面メニュー（マスクを含む） -->
+        <div class="neon-menu" id="neonMenu">
+            <!-- クリックを止めたいメニュー本体 -->
+            <div class="menu-inner">
+                <ul>
+                    <li><a href="#mainvisual">TOP</a></li>
+                    <li><a href="#experience">EXPERIENCE</a></li>
+                    <li><a href="#voice">VOICE</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
     </header>
 
     <main>
@@ -43,19 +71,30 @@
             </a>
         </section>
 
-
         <section id="voice">
+            <h2>VOICE</h2>
             <div class="voice slider-left">
                 <img class="rabit" src="img/pink-rabit.png" alt="ピンク色のうさぎ">
-                <img class="balloon" src="img/balloon.png" alt="吹き出し">
+                <div class="balloon">
+                    <img src="img/balloon.png" alt="吹き出し">
+                    <p>こんにちは</p>
+                </div>
             </div>
+
             <div class="voice slider-right">
                 <img class="rabit" src="img/blue-rabit.png" alt="青色のうさぎ">
-                <img class="balloon" src="img/balloon.png" alt="吹き出し">
+                <div class="balloon">
+                    <img src="img/balloon.png" alt="吹き出し">
+                    <p>こんにちは</p>
+                </div>
             </div>
+
             <div class="voice slider-left">
                 <img class="rabit" src="img/green-rabit.png" alt="緑色のうさぎ">
-                <img class="balloon" src="img/balloon.png" alt="吹き出し">
+                <div class="balloon">
+                    <img src="img/balloon.png" alt="吹き出し">
+                    <p>こんにちは</p>
+                </div>
             </div>
         </section>
 
