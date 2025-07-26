@@ -1,75 +1,65 @@
 $(function () {
   const $section = $("#experience");
   const $clickBtn = $section.find(".click-btn");
+  const $clickBtnSp = $section.find(".click-btn-sp");
   const $lightEffect = $section.find(".light-effect");
+  const $hoverPc = $section.find(".hover-text.hover-pc");
+  const $hoverSp = $section.find(".hover-text.hover-sp");
 
-  // マウスが動いたとき
-  $section.on("mousemove", function (e) {
-    const offset = $section.offset();
-    const x = e.pageX - offset.left;
-    const y = e.pageY - offset.top;
+  const isMobile = window.innerWidth <= 768;
 
-    // click-btnをマウス位置に追従
-    $clickBtn.css({
-      transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
+  // PC時のみマウス追従エフェクト
+  if (!isMobile) {
+    $section.on("mousemove", function (e) {
+      const offset = $section.offset();
+      const x = e.pageX - offset.left;
+      const y = e.pageY - offset.top;
+
+      $clickBtn.css({
+        transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
+      });
+
+      $lightEffect.css({
+        left: x + "px",
+        top: y + "px",
+      });
     });
 
-    // light-effectも追従
-    $lightEffect.css({
-      left: x + "px",
-      top: y + "px",
+    $section.on("mouseleave", function () {
+      $clickBtn.css({ opacity: 0 });
+      $lightEffect.css({ opacity: 0 });
     });
-  });
 
-  // セクションから離れたとき
-  $section.on("mouseleave", function () {
-    $clickBtn.css({ opacity: 0 });
-    $lightEffect.css({ opacity: 0 });
-  });
+    $section.on("mouseenter", function () {
+      $clickBtn.css({ opacity: 1 });
+      $lightEffect.css({ opacity: 1 });
+    });
 
-  // セクションに入ったとき
-  $section.on("mouseenter", function () {
-    $clickBtn.css({ opacity: 1 });
-    $lightEffect.css({ opacity: 1 });
-  });
+    $clickBtn.show();
+    $clickBtnSp.hide();
+    $hoverPc.show();
+    $hoverSp.hide();
+  } else {
+    $clickBtn.hide();
+    $clickBtnSp.show();
+    $lightEffect.hide();
+    $hoverPc.hide();
+    $hoverSp.show();
+  }
 
-  // スムーススクロール（#experience のみ特殊）
-  // $('a[href^="#"]').on("click", function (e) {
-  //   const speed = 100;
-  //   const href = $(this).attr("href");
-  //   const $target = href === "#" || href === "" ? $("html") : $(href);
-
-  //   if (href === "#experience") {
-  //     const position =
-  //       $target.offset().top +
-  //       $target.outerHeight() -
-  //       $(window).height() +
-  //       20;
-
-  //     $("html, body").animate({ scrollTop: position }, speed, "swing");
-  //   } else {
-  //     const position = $target.offset().top;
-  //     $("html, body").animate({ scrollTop: position }, speed, "swing");
-  //   }
-
-  //   e.preventDefault();
-  // });
+  // スムーススクロール
   $('a[href^="#"]').on("click", function (e) {
     const speed = 200;
     const href = $(this).attr("href");
     const $target = href === "#" || href === "" ? $("html") : $(href);
 
     let position;
-
     if (href === "#experience") {
-      // experience → セクションの終わり近くに止まる
       position =
         $target.offset().top + $target.outerHeight() - $(window).height() + 20;
     } else if (href === "#voice") {
-      // voice → 少し上に止める
-      position = $target.offset().top - 200; // .voiceの停止位置を200px上にする
+      position = $target.offset().top - 200;
     } else {
-      // それ以外 → 通常通り
       position = $target.offset().top;
     }
 
@@ -77,60 +67,85 @@ $(function () {
     e.preventDefault();
   });
 
-  // フェードイン関数
-  function fadeInVoice() {
-    $(".voice").each(function () {
-      const elemTop = $(this).offset().top;
-      const scroll = $(window).scrollTop();
-      const windowHeight = $(window).height();
+  // VOICE セクション フェードイン
+function fadeInVoice() {
+  $(".voice").each(function () {
+    const elemTop = $(this).offset().top;
+    const elemBottom = elemTop + $(this).outerHeight();
+    const scrollTop = $(window).scrollTop();
+    const windowHeight = $(window).height();
 
-      if (scroll > elemTop - windowHeight + 100) {
-        $(this).addClass("active");
-      }
-    });
-  }
+    const isVisible =
+      scrollTop + windowHeight > elemTop + 100 &&
+      scrollTop < elemBottom - 100;
 
-  // ページ読み込み時とスクロール時に発火
-  $(window).on("scroll load", function () {
-    fadeInVoice();
+    const $slider = $(this).hasClass("slider-left") || $(this).hasClass("slider-right")
+      ? $(this)
+      : $(this).find(".slider-left, .slider-right");
+
+    if (isVisible) {
+      $slider.addClass("active");
+    } else {
+      $slider.removeClass("active");
+    }
   });
+}
 
-  // ハンバーガーメニュー開閉
+$(window).on("scroll load", fadeInVoice);
+
+
+$(window).on("scroll load", fadeInVoice);
+
+  // ハンバーガーメニュー開閉＋スクロール制御
   $("#hamburger").on("click", function () {
     $(this).toggleClass("active");
     $("#neonMenu").toggleClass("active");
+    $("body").toggleClass("menu-open");
+
+    // アイコンの葉っぱアニメーション
+    $("#leafIcon").toggleClass("open");
   });
 
-  // マスク部分（menuの外側）をクリックしたら閉じる
+  // メニューの外側クリックで閉じる
   $("#neonMenu").on("click", function (e) {
-    // メニュー本体以外がクリックされたら閉じる
     if (!$(e.target).closest(".menu-inner").length) {
       $(this).removeClass("active");
       $("#hamburger").removeClass("active");
+      $("body").removeClass("menu-open");
+      $("#leafIcon").removeClass("open");
     }
   });
 
-  // ハンバーガー展開時、スクロール防止
-  $("#hamburger").on("click", function () {
-  $(this).toggleClass("active");
-  $("#neonMenu").toggleClass("active");
-  $("body").toggleClass("menu-open");
-});
+  // メニュー内リンククリックで閉じる
+  $(".menu-inner a").on("click", function () {
+    $("#neonMenu").removeClass("active");
+    $("#hamburger").removeClass("active");
+    $("body").removeClass("menu-open");
+    $("#leafIcon").removeClass("open");
+  });
 
+  // フッターが見えたらヘッダー非表示
+  const header = document.getElementById("header");
+  const footer = document.querySelector("footer");
 
-  // ロゴ画像の切り替え
-  function switchLogo() {
-    const logo = document.getElementById("responsive-logo");
-    if (window.innerWidth <= 768) {
-      logo.src = "img/logo-mobile.png";
-    } else {
-      logo.src = "img/logo-desktop.png";
-    }
+  if (header && footer) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            header.classList.add("unfixed");
+          } else {
+            header.classList.remove("unfixed");
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
+    observer.observe(footer);
+  } else {
+    console.log("ヘッダーまたはフッターが見つかりませんでした。");
   }
-
-  // 初回ロード時
-  switchLogo();
-
-  // ウィンドウサイズ変更時にも切り替える
-  window.addEventListener("resize", switchLogo);
 });
