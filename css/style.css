@@ -21,7 +21,8 @@ body.menu-open {
 html,
 body {
   overflow-x: hidden;
-}
+  overflow-y: auto;
+} 
 
 a {
   text-decoration: none;
@@ -35,6 +36,10 @@ img {
 
 li {
   list-style: none;
+}
+
+main {
+  min-height: 150vh;
 }
 
 /* すべての要素の余白をリセット */
@@ -72,6 +77,7 @@ li {
 
 /* ネオンゆらぎアニメーション */
 @keyframes neon-glow {
+
   0%,
   100% {
     text-shadow: 0 0 5px #86ef7b, 0 0 10px #86ef7b, 0 0 20px #86ef7b,
@@ -303,11 +309,9 @@ li {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.15),
-    transparent 60%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.15),
+      transparent 60%);
   pointer-events: none;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -947,6 +951,123 @@ footer .navi {
 
 }
 
+/*  ------------------------------------
+
+        experience.html  .scroll
+
+------------------------------------ */
+.horizontal-section {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  white-space: nowrap;
+  display: flex;
+  scroll-behavior: smooth;
+}
+
+.scroll-container {
+  display: flex;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-item {
+  flex: 0 0 100vw;
+  height: 100vh;
+  /* scroll-snap-align: start; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-item:last-child {
+  scroll-snap-align: none;
+}
+
+.scroll-item img {
+  width: 90%;
+  height: 90vh;
+  object-fit: cover;
+  display: block;
+}
+
+/*  ------------------------------------
+
+        experience.html  .gallery
+
+------------------------------------ */
+.fall {
+  background-color: #f8f8f8;
+  padding: 80px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* カード回転 */
+.flip-card {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #fff;
+  color: #333;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* box-sizing: border-box; */
+}
+
+/*  ------------------------------------
+
+        experience.html  .scroll
+
+------------------------------------ */
+=======
 @media (min-width: 769px) {
   .click-btn-sp {
     display: none;
