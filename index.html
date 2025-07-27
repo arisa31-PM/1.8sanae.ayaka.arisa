@@ -7,74 +7,136 @@
     <meta name="description"
         content="メタバースでつながる、新しい学びと仲間との出会い。初心者も安心して参加できるコミュニティ『Meta Leaf』で、セミナーや作業会を通じて目的に合わせた活用を始めよう。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" type="image/png" href="img/favicon.png?v=2">
+    <link rel="icon" type="image/png" href="img/favicon.png?v=2">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1><img src="img/logo.png" alt="メタリーフロゴ画像"></h1>
+    <header id="header">
+        <h1>
+            <img class="logo-pc" src="img/logo-pc.png" alt="メタリーフロゴ画像">
+            <img class="logo-sp" src="img/logo-sp.png" alt="メタリーフロゴ画像">
+        </h1>
+
+        <nav class="header-nav">
+            <ul class="navi">
+                <li><a href="#mainvisual">TOP</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#voice">VOICE</a></li>
+                <li class="contact-link">
+                    <a href="#contact">
+                        CONTACT
+                        <span><img class="fly-icon" src="img/plane.png" alt="紙飛行機"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="neonMenu" class="neon-menu">
+        <div class="menu-inner">
+            <ul>
+                <li><a href="#mainvisual">TOP</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#voice">VOICE</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <section id="mainvisual">
+            <video class="mainvisual" src="video/mainvisual.mp4" autoplay loop muted playsinline></video>
+            <h2>Start with confidence. Connect with purpose.</h2>
+            <h3>自信を持って始めよう。目的を持ってつながろう。</h3>
+        </section>
+
+        <div class="gradient-divider"></div>
+
+        <section id="experience">
+            <a class="hover-box" href="experience.html">
+                <img class="experience" src="img/experience.jpg" alt="異空間">
+
+                <div class="light-effect"></div>
+
+                <div class="hover-text hover-pc">
+                    <p>Let’s experience the Meta Leaf</p>
+                </div>
+
+                <img class="click-btn" src="img/click-btn.png" alt="CLICK">
+                <img class="click-btn-sp" src="img/click-btn.png" alt="CLICK">
+            </a>
+
+            <div class="hover-text hover-sp">
+                <p>Let’s experience the Meta Leaf</p>
+            </div>
+        </section>
+
+        <div class="gradient-divider"></div>
+
+        <section id="voice">
+            <h2>VOICE</h2>
+            <div class="voice slider-left">
+                <img class="rabit" src="img/pink-rabit.png" alt="ピンク色のうさぎ">
+                <div class="balloon">
+                    <img src="img/balloon.png" alt="吹き出し">
+                    <p>同じようにITに興味を持つ人たちと出会えて刺激になりました。私も挑戦してみたいと思える時間でした。</p>
+                </div>
+            </div>
+
+            <div class="voice slider-right">
+                <img class="rabit" src="img/blue-rabit.png" alt="青色のうさぎ">
+                <div class="balloon">
+                    <img src="img/balloon.png" alt="吹き出し">
+                    <p>人見知りなので最初は緊張していましたが、優しい雰囲気でホッとしました。少しだけ自分に自信が持てた気がします。</p>
+                </div>
+            </div>
+
+            <div class="voice slider-left">
+                <img class="rabit" src="img/green-rabit.png" alt="緑色のうさぎ">
+                <div class="balloon">
+                    <img src="img/balloon.png" alt="吹き出し">
+                    <p>子育てで自分のことは後回しだったけど、久しぶりにリフレッシュできました。前向きな気持ちを取り戻せました。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
         <nav>
             <ul class="navi">
                 <li><a href="#mainvisual">TOP</a></li>
                 <li><a href="#experience">EXPERIENCE</a></li>
                 <li><a href="#voice">VOICE</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li class="contact-link">
+                    <a href="#contact">
+                        CONTACT
+                        <span><img class="fly-icon" src="img/plane.png" alt="紙飛行機"></span>
+                    </a>
+                </li>
             </ul>
         </nav>
-    </header>
+        <p>&copy;1.8+</p>
+        <div class="top-btn">
+            <a href="#mainvisual">PAGE TOP</a>
+        </div>
+    </footer>
 
-    <main>
-        <section id="mainvisual">
-            <video class="mainvisual" src="video/mainvisual.mp4" autoplay loop muted></video>
-            <h2>Start with confidence. Connect with purpose.</h2>
-            <h3>自信を持って始めよう。目的を持ってつながろう。</h3>
-        </section>
+    <div id="hamburger" class="hamburger">
+        <svg id="leafIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+            <g stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <path d="M32 4 C10 20, 10 44, 32 60 C54 44, 54 20, 32 4 Z" />
+            </g>
 
-        <section id="experience">
-            <a href="experience.html" class="hover-box">
-                <img class="experience" src="img/experience.jpg" alt="異空間">
-                <div class="light-effect"></div>
-                <div class="hover-text">
-                    <p>Let’s experience the Meta Leaf</p>
-                </div>
-                <img class="click-btn" src="img/click-btn.png" alt="CLICK">
-            </a>
-        </section>
+            <g stroke="#fff" stroke-width="3" stroke-linecap="round">
+                <path class="vein vein1" d="M32 18 L32 46" />
+                <path class="vein vein2" d="M22 28 L42 28" />
+                <path class="vein vein3" d="M22 38 L42 38" />
+            </g>
+        </svg>
+    </div>
 
-
-        <section id="voice">
-            <div class="voice slider-left">
-                <img class="rabit" src="img/pink-rabit.png" alt="ピンク色のうさぎ">
-                <img class="balloon" src="img/balloon.png" alt="吹き出し">
-            </div>
-            <div class="voice slider-right">
-                <img class="rabit" src="img/blue-rabit.png" alt="青色のうさぎ">
-                <img class="balloon" src="img/balloon.png" alt="吹き出し">
-            </div>
-            <div class="voice slider-left">
-                <img class="rabit" src="img/green-rabit.png" alt="緑色のうさぎ">
-                <img class="balloon" src="img/balloon.png" alt="吹き出し">
-            </div>
-        </section>
-
-        <footer>
-            <nav>
-                <ul class="navi">
-                    <li><a href="#mainvisual">TOP</a></li>
-                    <li><a href="#experience">EXPERIENCE</a></li>
-                    <li><a href="#voice">VOICE</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                </ul>
-            </nav>
-            <p>&copy;1.8+</p>
-            <div class="top-btn">
-                <a href="#mainvisual">PAGE TOP</a>
-            </div>
-        </footer>
-
-    </main>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
