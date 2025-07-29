@@ -101,8 +101,6 @@ $(window).on("scroll load", fadeInVoice);
     $(this).toggleClass("active");
     $("#neonMenu").toggleClass("active");
     $("body").toggleClass("menu-open");
-
-    // アイコンの葉っぱアニメーション
     $("#leafIcon").toggleClass("open");
   });
 
@@ -164,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-=======
+
   // フッターが見えたらヘッダー非表示
   const header = document.getElementById("header");
   const footer = document.querySelector("footer");

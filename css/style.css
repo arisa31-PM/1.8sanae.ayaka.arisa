@@ -31,7 +31,6 @@ a {
 
 img {
   max-width: 100%;
-  /* width:100%; */
 }
 
 li {
@@ -111,7 +110,7 @@ main {
   opacity: 1;
 }
 
-/* アニメーション後の位置 */
+/* 紙飛行機ホバー停止位置 */
 @keyframes flyToTopRight {
   0% {
     transform: translate(0, 0) rotate(0deg);
@@ -230,6 +229,7 @@ main {
   animation: floatUp 0.8s forwards;
 }
 
+/* レスポンシブメニューアニメーション */
 @keyframes floatUp {
   to {
     transform: translateY(0);
@@ -390,26 +390,26 @@ main {
 ------------------------------------ */
 #voice {
   margin: 0 auto;
-  background-image: url(/img/voice-back.png);
   width: 100%;
   object-fit: cover;
+  padding: 60px 20px;
+  background-image: url(/img/voice-back.png);
   background-size: cover;
   text-align: center;
-  padding: 60px 20px;
 }
 
 #voice h2 {
+  position: relative;
+  margin-bottom: 100px;
   font-size: 4rem;
   font-weight: 800;
   background: linear-gradient(135deg, #00f2fe, #4facfe, #00c6ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
-  animation: glow 2s ease-in-out infinite alternate;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 100px;
   z-index: 1;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
@@ -426,24 +426,25 @@ main {
   position: absolute;
   bottom: -15px;
   left: 50%;
-  transform: translateX(-50%);
   width: 100px;
   height: 4px;
   background: linear-gradient(90deg, #00f2fe, #4facfe, #00c6ff);
   border-radius: 2px;
   box-shadow: 0 0 8px #00f2fe;
+  transform: translateX(-50%);
 }
 
 #voice .voice {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 60px;
-  gap: 30px;
-  flex-wrap: wrap;
+  margin-bottom: 30px;
+  /* gap: 100px; */
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out;
+  /* margin:0 auto 60px; */
 }
 
 #voice .voice.active {
@@ -455,12 +456,12 @@ main {
   display: block;
   width: 200px;
   height: 200px;
-  margin-inline: 50px;
+  margin-inline: 30px;
 }
 
 #voice .balloon {
   position: relative;
-  max-width: 90%;
+  max-width: 600px;
 }
 
 #voice .balloon p {
@@ -480,12 +481,12 @@ main {
 
 #voice .slider-right .balloon {
   transform: none !important;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 #voice .slider-right .balloon p {
   transform: translate(-50%, -50%) scaleX(1);
-  width: 75%;
+  width: 70%;
   padding-left: 0;
   padding: 10px;
   margin: 0 auto;
@@ -494,12 +495,13 @@ main {
 
 .slider-left,
 .slider-right {
+  position: relative;
   opacity: 0;
   clip-path: inset(0 100% 0 0);
   filter: brightness(1.5) saturate(1.5) blur(2px);
   transition: clip-path 1s ease, opacity 1s ease, filter 1.2s ease;
-  position: relative;
   overflow: hidden;
+  /* justify-content: space-between; */
 }
 
 .slider-left {
@@ -508,7 +510,6 @@ main {
 
 .slider-right {
   flex-direction: row-reverse;
-  /* clip-path: inset(0 0 0 100%); */
 }
 
 .slider-left.active,
@@ -555,6 +556,7 @@ main {
   animation: scanline 1.2s ease-in-out forwards;
 }
 
+/* ネオンライト */
 @keyframes scanline {
   0% {
     left: -100%;
@@ -805,10 +807,6 @@ footer .navi {
     box-sizing: border-box;
     font-size: 0.875rem;
     line-height: 1.6;
-  }
-
-  #voice .slider-left {
-    margin-inline: 50px;
   }
 
   #voice .slider-right .balloon {
@@ -1067,7 +1065,6 @@ footer .navi {
         experience.html  .scroll
 
 ------------------------------------ */
-=======
 @media (min-width: 769px) {
   .click-btn-sp {
     display: none;
