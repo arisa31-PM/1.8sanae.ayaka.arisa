@@ -1,0 +1,131 @@
+body {
+  background-color: #000;
+  color: #61faf2;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* ロゴ */
+.logo {
+  width: 300px;
+  opacity: 0;
+  animation: logoIn 2s forwards;
+}
+
+/* タイトル */
+.title {
+  font-size: 5rem;
+  margin-top: 20px;
+  opacity: 0;
+  animation: titleIn 1.5s forwards;
+  animation-delay: 1.5s;
+}
+
+/* サブタイトル */
+.subtitle {
+  font-size: 1rem;
+  margin-top: 10px;
+  opacity: 0;
+  animation: subtitleIn 1.5s forwards;
+  animation-delay: 3s;
+}
+
+/* ENTERボタン */
+
+.enter-button {
+  margin-top: 50px;
+  opacity: 0;
+  animation: buttonFadeIn 1s forwards;
+  animation-delay: 3s;
+}
+
+.enter-button a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px 25px;
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    font-size: 1.9rem;
+    background: #61faf2;
+}
+
+.enter-button a:hover {
+    background: #060606;
+    color: #ffffff;
+}
+.enter-button a:before, .enter-button a:after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.enter-button a:before {
+  top: 0;
+  left: 0;
+}
+.enter-button a:after {
+  bottom: 0;
+  right: 0;
+}
+.enter-button a:hover:before, .enter-button a:hover:after {
+  width: 100%;
+  height: 100%;
+}
+.enter-button a:hover:before {
+  border-top-color: #61faf2;
+  border-right-color: #61faf2;
+  transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+.enter-button a:hover:after {
+  border-bottom-color: #61faf2;
+  border-left-color: #61faf2;
+  transition: border-color 0s ease-out 0.2s, width 0.15s ease-out 0.2s, height 0.15s ease-out 0.3s;
+}
+/* .enter-button {
+  margin-top: 40px;
+  padding: 20px 30px;
+  font-size: 1rem;
+  background-color: #61faf2;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  animation: buttonFadeIn 1s forwards;
+  animation-delay: 4s;
+} */
+
+/* --- アニメーション定義 --- */
+@keyframes logoIn {
+  to { opacity: 1; }
+}
+
+@keyframes titleIn {
+  to { opacity: 1; }
+}
+
+@keyframes subtitleIn {
+  to { opacity: 1; }
+}
+
+@keyframes buttonFadeIn {
+  to { opacity: 1; }
+}
