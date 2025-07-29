@@ -22,7 +22,7 @@ html,
 body {
   overflow-x: hidden;
   overflow-y: auto;
-} 
+}
 
 a {
   text-decoration: none;
@@ -117,6 +117,7 @@ main {
     transform: translate(0, 0) rotate(0deg);
     opacity: 0;
   }
+
   100% {
     transform: translate(130%, -100%) rotate(15deg);
     opacity: 1;
@@ -130,11 +131,9 @@ main {
 ------------------------------------ */
 .gradient-divider {
   height: 100px;
-  background: linear-gradient(
-    to bottom,
-    rgba(17, 64, 58, 1),
-    rgba(10, 34, 30, 0)
-  );
+  background: linear-gradient(to bottom,
+      rgba(17, 64, 58, 1),
+      rgba(10, 34, 30, 0));
 }
 
 /*  ------------------------------------
@@ -151,7 +150,7 @@ main {
   align-items: center;
   background-color: rgba(105, 195, 193, 0.8);
   width: 100%;
-  height:100px;
+  height: 100px;
   z-index: 15;
   padding: 20px 2%;
   box-sizing: border-box;
@@ -240,12 +239,15 @@ main {
 .menu-inner li:nth-child(1) {
   animation-delay: 0.1s;
 }
+
 .menu-inner li:nth-child(2) {
   animation-delay: 0.3s;
 }
+
 .menu-inner li:nth-child(3) {
   animation-delay: 0.5s;
 }
+
 .menu-inner li:nth-child(4) {
   animation-delay: 0.7s;
 }
@@ -416,6 +418,7 @@ main {
   0% {
     text-shadow: 0 0 6px #00f2fe, 0 0 12px #00f2fe, 0 0 20px #00c6ff;
   }
+
   100% {
     text-shadow: 0 0 10px #00f2fe, 0 0 18px #4facfe, 0 0 30px #00c6ff;
   }
@@ -523,9 +526,11 @@ main {
   0% {
     box-shadow: 0 0 0px #00ffff;
   }
+
   50% {
     box-shadow: 0 0 12px #00ffff, 0 0 24px #00ffff;
   }
+
   100% {
     box-shadow: 0 0 0px transparent;
   }
@@ -539,12 +544,10 @@ main {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%);
   transform: skewX(-25deg);
   z-index: 2;
   opacity: 0.6;
@@ -559,6 +562,7 @@ main {
   0% {
     left: -100%;
   }
+
   100% {
     left: 120%;
   }
@@ -615,7 +619,8 @@ footer .navi {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 8px solid #fff;
-  transform: rotate(-90deg); /* 角度調整（右上向き） */
+  transform: rotate(-90deg);
+  /* 角度調整（右上向き） */
   vertical-align: middle;
   position: relative;
   top: -1px;
@@ -623,16 +628,16 @@ footer .navi {
 }
 
 @keyframes neon-flicker {
+
   0%,
   100% {
     opacity: 1;
-    filter: drop-shadow(0 0 3px #39ff14) drop-shadow(0 0 6px #39ff14)
-      drop-shadow(0 0 12px #39ff14);
+    filter: drop-shadow(0 0 3px #39ff14) drop-shadow(0 0 6px #39ff14) drop-shadow(0 0 12px #39ff14);
   }
+
   50% {
     opacity: 0.6;
-    filter: drop-shadow(0 0 1px #39ff14) drop-shadow(0 0 2px #39ff14)
-      drop-shadow(0 0 4px #39ff14);
+    filter: drop-shadow(0 0 1px #39ff14) drop-shadow(0 0 2px #39ff14) drop-shadow(0 0 4px #39ff14);
   }
 }
 
@@ -658,6 +663,7 @@ footer .navi {
 
 ------------------------------------ */
 @media screen and (max-width: 768px) {
+
   /* ヘッダー */
   .logo-pc {
     display: none;
@@ -866,11 +872,9 @@ footer .navi {
     width: 68px;
     height: 68px;
     border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(134, 239, 123, 0.6),
-      transparent 60%
-    );
+    background: radial-gradient(circle,
+        rgba(134, 239, 123, 0.6),
+        transparent 60%);
     z-index: -1;
     animation: pulse 2s infinite;
   }
@@ -880,10 +884,12 @@ footer .navi {
       transform: scale(1);
       opacity: 0.7;
     }
+
     50% {
       transform: scale(1.2);
       opacity: 0.3;
     }
+
     100% {
       transform: scale(1);
       opacity: 0.7;
@@ -909,45 +915,45 @@ footer .navi {
   }
 
   /* index.html 共通設定 */
-#hamburger{
-  display: block;
-  position: fixed;
-  top:20px;
-  right:20px;
-  width:64px;
-  height:64px;
-  z-index: 50;
-  cursor: pointer;
-}
+  #hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 64px;
+    height: 64px;
+    z-index: 50;
+    cursor: pointer;
+  }
 
-#leafIcon {
-  display: block;
-  width: 64px;
-  height: 64px;
-  padding:5px;
-  background-color: rgba(0,0,0,0.4);
-  border-radius: 50%;
-  opacity: 1;
-}
+  #leafIcon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    opacity: 1;
+  }
 
-.vein {
-  transition: transform 0.4s ease;
-  stroke: #fff;
-  stroke-width:3;
-  transform-origin: center;
-}
+  .vein {
+    transition: transform 0.4s ease;
+    stroke: #fff;
+    stroke-width: 3;
+    transform-origin: center;
+  }
 
-#leafIcon.open .vein1 {
-  transform: rotate(45deg);
-}
+  #leafIcon.open .vein1 {
+    transform: rotate(45deg);
+  }
 
-#leafIcon.open .vein2 {
-  opacity: 0;
-}
+  #leafIcon.open .vein2 {
+    opacity: 0;
+  }
 
-#leafIcon.open .vein3 {
-  transform: rotate(-45deg);
-}
+  #leafIcon.open .vein3 {
+    transform: rotate(-45deg);
+  }
 
 }
 
@@ -956,9 +962,14 @@ footer .navi {
         experience.html  .scroll
 
 ------------------------------------ */
+body.experience-page {
+  overflow-x: auto !important;
+}
+
 .horizontal-section {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
+  margin-top: 100px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -970,10 +981,10 @@ footer .navi {
 .scroll-container {
   display: flex;
   height: 100vh;
-  overflow-x: auto;
+  overflow-x: auto !important;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -987,7 +998,7 @@ footer .navi {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .scroll-item:last-child {
@@ -1013,7 +1024,7 @@ footer .navi {
   flex-wrap: wrap;
   gap: 50px;
   justify-content: center;
-  height: 100vh;
+  height: auto;
 }
 
 /* カード回転 */
@@ -1067,10 +1078,8 @@ footer .navi {
         experience.html  .scroll
 
 ------------------------------------ */
-=======
-@media (min-width: 769px) {
+=======@media (min-width: 769px) {
   .click-btn-sp {
     display: none;
   }
 }
-
