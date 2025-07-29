@@ -316,9 +316,13 @@ $(function () {
         }
       });
     }
-  } else {
-    // alert("⚠️ .scroll-container が見つかりません！");
-  }
+  });
+});
+
+  // フッターが見えたらヘッダー非表示
+  const header = document.getElementById("header");
+  const footer = document.querySelector("footer");
+
 
   if (header && footer) {
     const observer = new IntersectionObserver(
