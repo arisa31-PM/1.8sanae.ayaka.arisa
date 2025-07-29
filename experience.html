@@ -12,15 +12,24 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-  <header>
-    <h1><img src="img/logo.png" alt="メタリーフロゴ画像"></h1>
-    <nav>
+<body class="experience-page">
+  <header id="header">
+    <h1>
+      <img class="logo-pc" src="img/logo-pc.png" alt="メタリーフロゴ画像">
+      <img class="logo-sp" src="img/logo-sp.png" alt="メタリーフロゴ画像">
+    </h1>
+
+    <nav class="header-nav">
       <ul class="navi">
-        <li><a href="#mainvisual">TOP</a></li>
-        <li><a href="#experience">EXPERIENCE</a></li>
-        <li><a href="#voice">VOICE</a></li>
-        <li><a href="#">CONTACT</a></li>
+        <li><a href="index.html#mainvisual">TOP</a></li>
+        <li><a href="index.html#experience">EXPERIENCE</a></li>
+        <li><a href="index.html#voice">VOICE</a></li>
+        <li class="contact-link">
+          <a href="index.html#contact">
+            CONTACT
+            <span><img class="fly-icon" src="img/plane.png" alt="紙飛行機"></span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -29,10 +38,10 @@
     <!-- 横スクロールセクション -->
     <section class="horizontal-section">
       <div class="scroll-container">
-        <div class="scroll-item"><img src="img/image_14.png" alt="Image 1"></div>
-        <div class="scroll-item"><img src="img/image_36.png" alt="Image 2"></div>
-        <div class="scroll-item"><img src="img/image_37.png" alt="Image 3"></div>
-        <div class="scroll-item"><img src="img/image4.jpg" alt="Image 4"></div>
+        <div class="scroll-item"><img src="img/ex1.jpg" alt="Image 1"></div>
+        <div class="scroll-item"><img src="img/ex2.jpg" alt="Image 2"></div>
+        <div class="scroll-item"><img src="img/ex3.jpg" alt="Image 3"></div>
+        <div class="scroll-item"><img src="img/ex4.jpg" alt="Image 4"></div>
       </div>
     </section>
 
@@ -118,33 +127,31 @@
           </div>
         </div>
       </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="img/image_37.png" alt="表の画像">
-          </div>
-          <div class="flip-card-back">
-            <p>自分のレベルに合わせて<br>講師に質問出来ます。</p>
-          </div>
-        </div>
-      </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="img/image_14.png" alt="表の画像">
-          </div>
-          <div class="flip-card-back">
-            <p>屋上のセミナー会場</p>
-          </div>
-        </div>
-      </div>
     </section>
 
   </main>
+  <footer id="footer">
+    <nav>
+      <ul class="navi">
+        <li><a href="index.html#mainvisual">TOP</a></li>
+        <li><a href="index.html#experience">EXPERIENCE</a></li>
+        <li><a href="index.html#voice">VOICE</a></li>
+        <li class="contact-link">
+          <a href="index.html#contact">
+            CONTACT
+            <span><img class="fly-icon" src="img/plane.png" alt="紙飛行機"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <p>&copy;1.8+</p>
+    <div class="top-btn">
+      <a href="#mainvisual">PAGE TOP</a>
+    </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/main.js"></script>
-
 </body>
 
 </html>
