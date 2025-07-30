@@ -123,6 +123,7 @@ $(function () {
   function fadeInVoice() {
 
     $(".voice").each(function () {
+      if ($(this).hasClass("active")) return;
 
       const elemTop = $(this).offset().top;
 
