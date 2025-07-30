@@ -81,7 +81,6 @@ $(function () {
   }
 
 
-
   // スムーズスクロール
 
   $('a[href^="#"]').on("click", function (e) {
@@ -117,7 +116,6 @@ $(function () {
     e.preventDefault();
 
   });
-
 
 
   // VOICE セクションのフェードイン
@@ -163,7 +161,6 @@ $(function () {
 
 
   $(window).on("scroll load", fadeInVoice);
-
 
 
   // ハンバーガーメニュー
@@ -212,8 +209,6 @@ $(function () {
 
   });
 
-
-
   // 横スクロールセクション
   $(function () {
     const container = document.querySelector('.scroll-container');
@@ -252,6 +247,7 @@ $(function () {
         }
       });
     }
+
 
     // フッターが見えたらヘッダー非表示
     if (header && footer) {
