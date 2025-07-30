@@ -961,6 +961,8 @@ footer .navi {
 
 ------------------------------------ */
 body.experience-page {
+  background-image: url("/img/exbg.jpg");
+  background-repeat: repeat;
   overflow-x: auto !important;
 }
 
@@ -974,6 +976,7 @@ body.experience-page {
   white-space: nowrap;
   display: flex;
   scroll-behavior: smooth;
+  flex-direction: row;
 }
 
 .scroll-container {
@@ -996,18 +999,50 @@ body.experience-page {
   position: relative;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-}
-
-.scroll-item:last-child {
-  scroll-snap-align: none;
+  align-items: center;
 }
 
 .scroll-item img {
-  width: 90%;
-  height: 90vh;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 黒いフィルター */
+  z-index: 2;
+}
+
+.scroll-item h2 {
+  position: absolute;
+  top: 500px;
+  left: 80px;
+  color: white;
+  z-index: 3;
+  margin: 0;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.scroll-item p {
+  position: absolute;
+  top: 650px;
+  left: 80px;
+  color: white;
+  z-index: 3;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  /* margin-top: 10px; */
 }
 
 /*  ------------------------------------
@@ -1016,12 +1051,12 @@ body.experience-page {
 
 ------------------------------------ */
 .fall {
-  background-color: #f8f8f8;
-  padding: 80px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: center;
+  padding: 80px 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px;
+  justify-items: center;
+  align-items: center;
   height: auto;
 }
 
@@ -1036,7 +1071,7 @@ body.experience-page {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
+  transition: transform 1s;
   transform-style: preserve-3d;
 }
 
@@ -1061,7 +1096,7 @@ body.experience-page {
 }
 
 .flip-card-back {
-  background-color: #fff;
+  background-color: #ece3e3;
   color: #333;
   transform: rotateY(180deg);
   display: flex;
@@ -1073,6 +1108,56 @@ body.experience-page {
 
 /*  ------------------------------------
 
-        experience.html  .scroll
+        experience.html  レスポンシブ
 
 ------------------------------------ */
+@media screen and (max-width: 768px) {
+  .horizontal-section {
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: normal;
+  }
+
+  .scroll-container {
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .scroll-item {
+    flex: 0 0 auto;
+    /* 横並びから縦並びに変えるため、アイテムが縦に並ぶ */
+    height: auto;
+    width: 100%;
+  }
+
+  .scroll-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .scroll-item h2 {
+    top: 200px;
+    left: 40px;
+    color: white;
+    z-index: 3;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .scroll-item p {
+    top: 250px;
+    left: 40px;
+    color: white;
+    z-index: 3;
+    margin: 0;
+    font-size: 0.895rem;
+    line-height: 1.5;
+    /* margin-top: 10px; */
+  }
+}
