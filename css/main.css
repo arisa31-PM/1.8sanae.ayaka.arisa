@@ -152,7 +152,7 @@ main {
   height: 150px;
   z-index: 15;
   /* padding: 20px 2%; */
-  padding:40px;
+  padding: 40px;
   box-sizing: border-box;
   backdrop-filter: blur(4px);
   transition: top 0.5s ease, opacity 0.5s ease;
@@ -1101,7 +1101,15 @@ body.experience-page {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  /* box-sizing: border-box; */
+  text-align: center;
+}
+
+.flip-card-back p {
+  margin: 0;
+}
+
+.card-text {
+  display: none;
 }
 
 /*  ------------------------------------
@@ -1131,6 +1139,7 @@ body.experience-page {
     /* 横並びから縦並びに変えるため、アイテムが縦に並ぶ */
     height: auto;
     width: 100%;
+    /* scroll-snap-align: start; */
   }
 
   .scroll-item img {
@@ -1139,8 +1148,8 @@ body.experience-page {
   }
 
   .scroll-item h2 {
-    top: 200px;
-    left: 40px;
+    top: 130px;
+    left: 30px;
     color: white;
     z-index: 3;
     margin: 0;
@@ -1149,13 +1158,78 @@ body.experience-page {
   }
 
   .scroll-item p {
-    top: 250px;
-    left: 40px;
+    top: 180px;
+    left: 30px;
     color: white;
     z-index: 3;
     margin: 0;
     font-size: 0.895rem;
     line-height: 1.5;
     /* margin-top: 10px; */
+  }
+
+  .fall {
+    grid-template-columns: 1fr;
+    /* 縦並び */
+    padding: 50px 20px;
+  }
+
+  .flip-card {
+    margin-bottom: 20px;
+  }
+
+  .flip-card:first-child {
+    margin-top: 20px;
+  }
+
+  .flip-card:last-child {
+    margin-bottom: 35px;
+  }
+
+  /* カードをめくれないようにする */
+  .flip-card:hover .flip-card-inner {
+    transform: none;
+    /* めくれないようにする */
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 裏面のテキスト */
+  .flip-card-back {
+    background-color: #ece3e3;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    /* box-sizing: border-box; */
+    flex: 0;
+    height: auto;
+    text-align: center;
+  }
+
+  .flip-card-back p {
+    margin: 0;
+  }
+
+  .card-text {
+    display: block;
+    color: #fff;
+    text-align: center;
+    margin: 20px;
   }
 }
