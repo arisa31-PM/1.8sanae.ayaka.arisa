@@ -805,11 +805,12 @@ footer .navi {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.75rem;
-    width: 75%;
+    width: 70%;
     padding: 10px;
     box-sizing: border-box;
     font-size: 0.875rem;
     line-height: 1.6;
+    text-align: left;
   }
 
   #voice .slider-right .balloon {
@@ -913,7 +914,7 @@ footer .navi {
   #hamburger {
     display: block;
     position: fixed;
-    top: 20px;
+    top: 40px;
     right: 20px;
     width: 64px;
     height: 64px;
