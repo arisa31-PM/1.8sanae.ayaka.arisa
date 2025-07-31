@@ -224,6 +224,8 @@ $(function () {
       container.addEventListener('wheel', (e) => {
         if (!isMobile) { // PCの場合は横スクロール
           e.preventDefault(); // 縦スクロールを無効に
+          const scrollSpeed = e.deltaY * 0.5; // スクロール速度を調整
+
           if (!isHorizontalScrollActive) {
             // 横スクロールの前に縦スクロールを完全に無効化
             if (container.scrollTop === 0 || container.scrollTop === container.scrollHeight - container.clientHeight) {
