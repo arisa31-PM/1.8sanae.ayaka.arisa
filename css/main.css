@@ -980,7 +980,7 @@ body.experience-page {
 .horizontal-section {
   width: 100vw;
   height: 90vh;
-  margin-top: 100px;
+  margin-top: 150px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -1161,7 +1161,7 @@ body.experience-page {
   }
 
   .scroll-item h2 {
-    top: 130px;
+    top: 190px;
     left: 30px;
     color: white;
     z-index: 3;
@@ -1171,7 +1171,7 @@ body.experience-page {
   }
 
   .scroll-item p {
-    top: 180px;
+    top: 235px;
     left: 30px;
     color: white;
     z-index: 3;
