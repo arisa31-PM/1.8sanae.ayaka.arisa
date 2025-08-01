@@ -396,7 +396,8 @@ main {
   width: 100%;
   object-fit: cover;
   padding: 60px 20px;
-  background-image: url(/img/voice-back.png);
+  background-image: url(../img/voice-back.png);
+  /* background: url("/1.8sanae.ayaka.arisa/img/voice-back.png"); */
   background-size: cover;
   text-align: center;
 }
@@ -960,6 +961,7 @@ footer .navi {
 ------------------------------------ */
 body.experience-page {
   background-image: url("../img/exbg.jpg");
+  /* background: url("/1.8sanae.ayaka.arisa/img/exgg.jpg"); */
   background-repeat: repeat;
   overflow-x: auto !important;
 }
