@@ -9,18 +9,43 @@
 </head>
 <body>
 
-    <!-----------ロゴ---------------->
-    <img src="img/loading.png" alt="ロゴ" class="logo">
+  <section id="loading">
 
-    <!-------------テキスト---------------->
-     <div class="title">Meta Leaf</div>
+    <!-- ムービー -->
+    <video class="loading-movie" 
+      src="video/ローディング.mov" autoplay loop muted playsinline>
+    </video>
 
+      <div id="loading-content">
 
-  <!-----------------ボタン------------------>
+        <div class="loading-text">
+            <!-- ロゴ画像 -->
+            <img src="img/loading.png" alt="ロゴ" >
 
-  <div class="enter-button">
-    <a href="main.html">Entering the Meta Leaf</a>
-  </div>
-  <!-- <button class="enter-button" onclick="location.href='index.html'">Entering the Meta Leaf</button> -->
+            <!-- テキスト -->
+            <div class="text">
+              <p>M</p>
+              <p>e</p>
+              <p>t</p>
+              <p>a</p>
+              <p>&nbsp;</p>
+              <p>L</p>
+              <p>e</p>
+              <p>a</p>
+              <p>f</p>
+            </div>
+        </div>
+
+          <!-- リンクボタン -->
+          <div class="enter-button">
+            <a href="main.html">Entering the Meta Leaf</a>
+          </div>
+
+      </div>
+
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
