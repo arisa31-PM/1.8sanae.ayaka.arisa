@@ -67,7 +67,10 @@ $(function () {
     if (href === "#experience") {
       position = isMobile
         ? $target.offset().top - 150
-        : $target.offset().top + $target.outerHeight() - $(window).height() + 20;
+        : $target.offset().top +
+          $target.outerHeight() -
+          $(window).height() +
+          20;
     } else if (href === "#voice") {
       position = isMobile
         ? $target.offset().top - 150
@@ -142,18 +145,25 @@ $(function () {
     let isHorizontalScrollActive = false;
 
     if (container) {
-      container.addEventListener('wheel', (e) => {
-        if (!isMobile) { // PCの場合は横スクロール
-          e.preventDefault(); // 縦スクロールを無効に
-          const scrollSpeed = e.deltaY * 0.5; // スクロール速度を調整
+      container.addEventListener(
+        "wheel",
+        (e) => {
+          if (!isMobile) {
+            // PCの場合は横スクロール
+            e.preventDefault(); // 縦スクロールを無効に
+            const scrollSpeed = e.deltaY * 0.5; // スクロール速度を調整
 
-          if (!isHorizontalScrollActive) {
-            // 横スクロールの前に縦スクロールを完全に無効化
-            if (container.scrollTop === 0 || container.scrollTop === container.scrollHeight - container.clientHeight) {
-              isHorizontalScrollActive = true; // 横スクロールを有効にする
-          ｝
-         ｝
-      
+            if (!isHorizontalScrollActive) {
+              // 横スクロールの前に縦スクロールを完全に無効化
+              if (
+                container.scrollTop === 0 ||
+                container.scrollTop ===
+                  container.scrollHeight - container.clientHeight
+              ) {
+                isHorizontalScrollActive = true; // 横スクロールを有効にする
+              }
+            }
+
             if (isHorizontalScrollActive) {
               container.scrollLeft += e.deltaY;
             }
