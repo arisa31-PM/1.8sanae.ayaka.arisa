@@ -774,7 +774,8 @@ footer .navi {
   /* ボイス */
   #voice {
     padding: 60px 20px;
-    background: url("../img/voice-back.png") no-repeat center center / cover;
+    /* background: url("../img/voice-back.png"); */
+    background-image: url("/1.8sanae.ayaka.arisa/img/voice-back.png");
     text-align: center;
   }
 
@@ -960,8 +961,8 @@ footer .navi {
 
 ------------------------------------ */
 body.experience-page {
-  background-image: url("../img/exbg.jpg");
-  /* background: url("/1.8sanae.ayaka.arisa/img/exgg.jpg"); */
+  /* background-image: url("../img/exbg.jpg"); */
+  background: url("/1.8sanae.ayaka.arisa/img/exbg.jpg");
   background-repeat: repeat;
   overflow-x: auto !important;
 }
