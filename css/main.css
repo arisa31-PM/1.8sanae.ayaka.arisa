@@ -773,7 +773,7 @@ footer .navi {
   /* ボイス */
   #voice {
     padding: 60px 20px;
-    background: url("/img/voice-back.png") no-repeat center center / cover;
+    background: url("./img/voice-back.png") no-repeat center center / cover;
     text-align: center;
   }
 
@@ -959,7 +959,7 @@ footer .navi {
 
 ------------------------------------ */
 body.experience-page {
-  background-image: url("/img/exbg.jpg");
+  background-image: url("./img/exbg.jpg");
   background-repeat: repeat;
   overflow-x: auto !important;
 }
