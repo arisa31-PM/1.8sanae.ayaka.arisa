@@ -1157,26 +1157,26 @@ body.experience-page {
 
   .scroll-item img {
     width: 100%;
-    height: auto;
+    height: 100vh;
   }
 
   .scroll-item h2 {
-    top: 190px;
-    left: 30px;
+    top: 510px;
+    left: 40px;
     color: white;
     z-index: 3;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
   }
 
   .scroll-item p {
-    top: 235px;
-    left: 30px;
+    top: 580px;
+    left: 40px;
     color: white;
     z-index: 3;
     margin: 0;
-    font-size: 0.895rem;
+    font-size: 1.3rem;
     line-height: 1.5;
     /* margin-top: 10px; */
   }
