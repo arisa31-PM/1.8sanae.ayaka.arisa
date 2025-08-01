@@ -76,7 +76,6 @@ main {
 
 /* ネオンゆらぎアニメーション */
 @keyframes neon-glow {
-
   0%,
   100% {
     text-shadow: 0 0 5px #86ef7b, 0 0 10px #86ef7b, 0 0 20px #86ef7b,
@@ -130,9 +129,11 @@ main {
 ------------------------------------ */
 .gradient-divider {
   height: 100px;
-  background: linear-gradient(to bottom,
-      rgba(17, 64, 58, 1),
-      rgba(10, 34, 30, 0));
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 64, 58, 1),
+    rgba(10, 34, 30, 0)
+  );
 }
 
 /*  ------------------------------------
@@ -312,9 +313,11 @@ main {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle,
-      rgba(255, 255, 255, 0.15),
-      transparent 60%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15),
+    transparent 60%
+  );
   pointer-events: none;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -543,10 +546,12 @@ main {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.2) 50%,
-      transparent 100%);
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
   transform: skewX(-25deg);
   z-index: 2;
   opacity: 0.6;
@@ -628,16 +633,17 @@ footer .navi {
 }
 
 @keyframes neon-flicker {
-
   0%,
   100% {
     opacity: 1;
-    filter: drop-shadow(0 0 3px #39ff14) drop-shadow(0 0 6px #39ff14) drop-shadow(0 0 12px #39ff14);
+    filter: drop-shadow(0 0 3px #39ff14) drop-shadow(0 0 6px #39ff14)
+      drop-shadow(0 0 12px #39ff14);
   }
 
   50% {
     opacity: 0.6;
-    filter: drop-shadow(0 0 1px #39ff14) drop-shadow(0 0 2px #39ff14) drop-shadow(0 0 4px #39ff14);
+    filter: drop-shadow(0 0 1px #39ff14) drop-shadow(0 0 2px #39ff14)
+      drop-shadow(0 0 4px #39ff14);
   }
 }
 
@@ -663,7 +669,6 @@ footer .navi {
 
 ------------------------------------ */
 @media screen and (max-width: 768px) {
-
   /* ヘッダー */
   .logo-pc {
     display: none;
@@ -774,7 +779,9 @@ footer .navi {
   /* ボイス */
   #voice {
     padding: 60px 20px;
+    /* ローカル用 */
     /* background: url("../img/voice-back.png"); */
+    /* Git Hub用 */
     background-image: url("/1.8sanae.ayaka.arisa/img/voice-back.png");
     text-align: center;
   }
@@ -870,9 +877,11 @@ footer .navi {
     width: 68px;
     height: 68px;
     border-radius: 50%;
-    background: radial-gradient(circle,
-        rgba(134, 239, 123, 0.6),
-        transparent 60%);
+    background: radial-gradient(
+      circle,
+      rgba(134, 239, 123, 0.6),
+      transparent 60%
+    );
     z-index: -1;
     animation: pulse 2s infinite;
   }
@@ -952,7 +961,6 @@ footer .navi {
   #leafIcon.open .vein3 {
     transform: rotate(-45deg);
   }
-
 }
 
 /*  ------------------------------------
@@ -961,7 +969,9 @@ footer .navi {
 
 ------------------------------------ */
 body.experience-page {
+    /* ローカル用 */
   /* background-image: url("../img/exbg.jpg"); */
+    /* Git Hub用 */
   background: url("/1.8sanae.ayaka.arisa/img/exbg.jpg");
   background-repeat: repeat;
   overflow-x: auto !important;
